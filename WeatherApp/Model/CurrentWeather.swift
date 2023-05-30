@@ -26,7 +26,8 @@ struct CurrentWeather {
     let nameCity: String
     let temperature: Double
     var temperatureString: String {
-        return String(format: "%.0f", temperature)
+        let formatTemp = String(format: "%.0f", temperature)
+        return "Температура \(formatTemp)°C"
     }
 
     let weatherDescription: String
@@ -34,7 +35,7 @@ struct CurrentWeather {
     let feelsLikeTemperature: Double
     var feelsLikeTemperatureString: String {
         let formatTemp = String(format: "%.0f", feelsLikeTemperature)
-        return formatTemp + "℃"
+        return "Ощущается как \(formatTemp)°C"
     }
     
     init?(weatherData: WeatherData) {
